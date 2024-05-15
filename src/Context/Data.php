@@ -2,10 +2,16 @@
 
 namespace BBLDN\AdCOM\Context;
 
+/**
+ * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#object--data-
+ */
 class Data
 {
     /**
-     * @param list<Segment>|null $segment
+     * @param mixed $ext Optional vendor-specific extensions.
+     * @param string|null $id Vendor-specific ID for the data provider.
+     * @param string|null $name Vendor-specific displayable name for the data provider.
+     * @param list<Segment>|null $segment Array of Segment objects that contain the actual data values. Refer to Object: Segment.
      */
     public function __construct(
         public string|null $id = null,

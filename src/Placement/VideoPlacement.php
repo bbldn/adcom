@@ -18,14 +18,42 @@ use BBLDN\AdCOM\Enum\ExpandableDirectionEnum;
 use BBLDN\AdCOM\Enum\PlaybackCessationModeEnum;
 use BBLDN\AdCOM\Enum\CreativeSubtypeAudioVideoEnum;
 
+/**
+ * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#object--videoplacement-
+ */
 class VideoPlacement
 {
     /**
+     * @param mixed $ext
+     * @param int|null $h
+     * @param int|null $w
+     * @param int|null $skip
+     * @param int|null $podid
+     * @param int|null $boxing
+     * @param int|null $maxdur
+     * @param int|null $maxext
+     * @param int|null $maxseq
+     * @param int|null $mindur
+     * @param int|null $poddur
+     * @param int|null $maxbitr
+     * @param int|null $minbitr
+     * @param int|null $skipmin
      * @param list<string> $mime
+     * @param int|null $skipafter
+     * @param SizeUnitEnum|null $unit
      * @param list<int>|null $rqddurs
+     * @param float|null $mincpmpersec
      * @param list<Companion>|null $comp
+     * @param ClickTypeEnum|null $clktype
+     * @param PodSequenceEnum|null $podseq
+     * @param LinearityModeEnum|null $linear
+     * @param StartDelayModeEnum|null $delay
+     * @param PlacementPositionEnum|null $pos
      * @param list<ApiFrameworkEnum>|null $api
+     * @param PlcmtSubtypeVideoEnum|null $ptype
+     * @param SlotPositionPodEnum|null $slotinpod
      * @param list<CompanionTypeEnum>|null $comptype
+     * @param PlaybackCessationModeEnum|null $playend
      * @param list<DeliveryMethodEnum>|null $delivery
      * @param list<PlaybackMethodEnum>|null $playmethod
      * @param list<ExpandableDirectionEnum>|null $expdir

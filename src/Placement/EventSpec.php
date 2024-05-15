@@ -6,13 +6,20 @@ use BBLDN\AdCOM\Enum\EventTypeEnum;
 use BBLDN\AdCOM\Enum\ApiFrameworkEnum;
 use BBLDN\AdCOM\Enum\EventTrackingMethodEnum;
 
+/**
+ * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#object--eventspec-
+ */
 class EventSpec
 {
     /**
-     * @param list<string>|null $jstrk
-     * @param list<string>|null $pxtrk
-     * @param list<ApiFrameworkEnum>|null $api
-     * @param list<EventTrackingMethodEnum>|null $method
+     * @param mixed $ext Optional vendor-specific extensions.
+     * @param int|null $wjs Sense of the jstrk restriction list, where 0 = block list, 1 = allow list.
+     * @param int|null $wpx Sense of the pxtrk restriction list, where 0 = block list, 1 = allow list.
+     * @param EventTypeEnum $type Type of supported ad tracking event. Refer to List: Event Types.
+     * @param list<string>|null $jstrk Array of domains, top two levels only (e.g., "tracker.com"), that constitute a restriction list of JavaScript trackers. The sense of the restrictions is determined by wjs.
+     * @param list<string>|null $pxtrk Array of domains, top two levels only (e.g., "tracker.com"), that constitute a restriction list of pixel image trackers. The sense of the restrictions is determined by wpx.
+     * @param list<ApiFrameworkEnum>|null $api Event tracking APIs available for use; only relevant for JavaScript method trackers. Refer to List: API Frameworks.
+     * @param list<EventTrackingMethodEnum>|null $method Array of supported event tracking methods for this event type. Refer to List: Event Tracking Methods.
      */
     public function __construct(
         public EventTypeEnum $type,
